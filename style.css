@@ -1,104 +1,202 @@
-/* Reset & base styles */
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
+/* Import modern clean font */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap');
+
+:root {
+  --gold: #a98914;
+  --cream: #f9f5e9;
+  --brown: #3e2a1c;
+  --light-brown: #ede6cf;
+  --max-width: 1100px;
 }
 
-body {
-  font-family: 'Helvetica Neue', sans-serif;
-  background-color: #ffffff;
-  color: #3e2a1c;
-  line-height: 1.6;
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
   scroll-behavior: smooth;
 }
 
-/* Logo and hero section */
-.hero {
-  height: 100vh;
-  background-size: cover;
-  background-position: center;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
+body {
+  font-family: 'Inter', sans-serif;
+  background-color: var(--cream);
+  color: var(--brown);
+  line-height: 1.6;
+  padding: 0;
+  margin: 0;
+}
+
+/* Header */
+header {
   text-align: center;
-  padding: 20px;
-  color: #3e2a1c;
-  position: relative;
+  padding: 3rem 1rem;
+  background-color: var(--light-brown);
+  border-bottom: 2px solid var(--gold);
 }
 
 .logo {
-  width: 140px;
-  margin-bottom: 20px;
+  width: 100px;
+  height: auto;
+  margin-bottom: 1rem;
 }
 
-.brand-name {
-  font-size: 3rem;
-  font-weight: bold;
-  color: #a98914;
+.brand {
+  font-size: 2rem;
+  font-weight: 800;
+  color: var(--brown);
 }
 
 .tagline {
   font-size: 1.2rem;
-  color: #3e2a1c;
-  margin-top: 10px;
+  margin: 0.5rem 0 1.5rem;
+  color: var(--gold);
 }
 
-/* Section styles */
+/* Navigation */
+nav {
+  margin-top: 1rem;
+}
+
+nav a {
+  text-decoration: none;
+  color: var(--brown);
+  margin: 0 1rem;
+  font-weight: 600;
+  transition: color 0.3s ease;
+}
+
+nav a:hover {
+  color: var(--gold);
+}
+
+/* Hero Section */
+.hero {
+  padding: 4rem 1rem;
+  background-color: white;
+  text-align: center;
+}
+
+.hero h2 {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+  color: var(--gold);
+}
+
+.hero p {
+  font-size: 1.1rem;
+  color: var(--brown);
+}
+
+/* General Sections */
 section {
-  padding: 80px 20px;
-  max-width: 900px;
+  padding: 4rem 1rem;
+  max-width: var(--max-width);
   margin: auto;
 }
 
-h2 {
-  font-size: 2rem;
-  margin-bottom: 20px;
-  color: #a98914;
-}
-
-p {
-  font-size: 1.1rem;
-  color: #3e2a1c;
+section h2 {
+  font-size: 1.8rem;
+  margin-bottom: 1rem;
+  color: var(--gold);
 }
 
 /* Product Gallery */
 .product-gallery {
   display: flex;
-  gap: 20px;
+  gap: 1.5rem;
   justify-content: center;
   flex-wrap: wrap;
-  margin-top: 30px;
+  margin-top: 2rem;
 }
 
 .product-gallery img {
-  width: 250px;
-  border-radius: 16px;
-  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
-  transition: transform 0.3s ease;
+  width: 220px;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .product-gallery img:hover {
-  transform: scale(1.03);
+  transform: scale(1.05);
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.12);
+}
+
+/* Contact */
+#contact p {
+  margin-bottom: 0.5rem;
 }
 
 /* Footer */
 footer {
-  background-color: #f1e9b5;
   text-align: center;
-  padding: 40px 20px;
-  color: #3e2a1c;
-  font-weight: 500;
+  padding: 2rem 1rem;
+  background-color: var(--light-brown);
+  font-size: 0.9rem;
+  border-top: 2px solid var(--gold);
+  color: var(--brown);
 }
 
 /* Responsive Design */
 @media (max-width: 768px) {
-  .brand-name {
-    font-size: 2.2rem;
+  .brand {
+    font-size: 1.6rem;
+  }
+
+  .tagline {
+    font-size: 1rem;
+  }
+
+  .hero h2 {
+    font-size: 1.5rem;
+  }
+
+  .hero p {
+    font-size: 1rem;
+  }
+
+  section h2 {
+    font-size: 1.4rem;
+  }
+
+  .product-gallery {
+    flex-direction: column;
+    align-items: center;
   }
 
   .product-gallery img {
-    width: 90%;
+    width: 80%;
+    max-width: 300px;
+  }
+
+  nav {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 0.5rem;
+  }
+
+  nav a {
+    margin: 0.3rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .logo {
+    width: 80px;
+  }
+
+  .hero h2 {
+    font-size: 1.3rem;
+  }
+
+  .hero p,
+  .tagline {
+    font-size: 0.95rem;
+  }
+
+  nav a {
+    font-size: 0.95rem;
   }
 }
