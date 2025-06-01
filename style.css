@@ -1,0 +1,104 @@
+/* Reset & base styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Helvetica Neue', sans-serif;
+  background-color: #ffffff;
+  color: #3e2a1c;
+  line-height: 1.6;
+  scroll-behavior: smooth;
+}
+
+/* Logo and hero section */
+.hero {
+  height: 100vh;
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 20px;
+  color: #3e2a1c;
+  position: relative;
+}
+
+.logo {
+  width: 140px;
+  margin-bottom: 20px;
+}
+
+.brand-name {
+  font-size: 3rem;
+  font-weight: bold;
+  color: #a98914;
+}
+
+.tagline {
+  font-size: 1.2rem;
+  color: #3e2a1c;
+  margin-top: 10px;
+}
+
+/* Section styles */
+section {
+  padding: 80px 20px;
+  max-width: 900px;
+  margin: auto;
+}
+
+h2 {
+  font-size: 2rem;
+  margin-bottom: 20px;
+  color: #a98914;
+}
+
+p {
+  font-size: 1.1rem;
+  color: #3e2a1c;
+}
+
+/* Product Gallery */
+.product-gallery {
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-top: 30px;
+}
+
+.product-gallery img {
+  width: 250px;
+  border-radius: 16px;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
+  transition: transform 0.3s ease;
+}
+
+.product-gallery img:hover {
+  transform: scale(1.03);
+}
+
+/* Footer */
+footer {
+  background-color: #f1e9b5;
+  text-align: center;
+  padding: 40px 20px;
+  color: #3e2a1c;
+  font-weight: 500;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .brand-name {
+    font-size: 2.2rem;
+  }
+
+  .product-gallery img {
+    width: 90%;
+  }
+}
