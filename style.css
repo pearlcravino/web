@@ -1,202 +1,185 @@
-/* Import modern clean font */
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap');
+/* Pearlcravino Complete CSS - Header & Navigation */
 
+/* Root variables for easy theme management */
 :root {
-  --gold: #a98914;
-  --cream: #f9f5e9;
-  --brown: #3e2a1c;
-  --light-brown: #ede6cf;
-  --max-width: 1100px;
+  --primary-color: #7f5f2a; /* warm brown */
+  --text-color: #333333;
+  --background-color: #ffffff;
+  --btn-bg-color: var(--primary-color);
+  --btn-hover-bg-color: #5a4220;
+  --font-family: 'Poppins', sans-serif;
 }
 
-* {
-  box-sizing: border-box;
+/* Reset default margin and apply base font */
+body {
+  margin: 0;
+  font-family: var(--font-family);
+  color: var(--text-color);
+  background-color: var(--background-color);
+}
+
+/* Header container */
+.header {
+  position: sticky;
+  top: 0;
+  background-color: var(--background-color);
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  padding: 0.75rem 1.5rem;
+  z-index: 1000;
+  /* Add smooth transition on background change if needed */
+  transition: background-color 0.3s ease;
+}
+
+/* Hero Section */
+
+.hero-section {
+  padding: 4rem 1.5rem;
+  background: #fff8f0; /* soft warm background */
+}
+
+.hero-content {
+  max-width: 1100px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 2rem;
+  flex-wrap: wrap;
+}
+
+.hero-text {
+  flex: 1 1 400px;
+}
+
+.hero-text h1 {
+  font-size: 2.75rem;
+  color: var(--primary-color);
+  margin-bottom: 1rem;
+  line-height: 1.2;
+  font-weight: 700;
+}
+
+.hero-text p {
+  font-size: 1.2rem;
+  color: var(--text-color);
+  margin-bottom: 2rem;
+  max-width: 400px;
+  line-height: 1.5;
+}
+
+.hero-image {
+  flex: 1 1 400px;
+  display: flex;
+  justify-content: center;
+}
+
+.hero-image img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 15px;
+  box-shadow: 0 8px 16px rgba(127, 95, 42, 0.25);
+}
+
+/* Wrapper to center content and flex layout */
+.container {
+  max-width: 1100px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+/* Logo style */
+.logo {
+  font-weight: 700;
+  font-size: 1.5rem;
+  color: var(--primary-color);
+  text-decoration: none;
+  user-select: none;
+}
+
+/* Navigation list */
+.nav-list {
+  list-style: none;
+  display: flex;
+  gap: 1.5rem;
   margin: 0;
   padding: 0;
 }
 
+/* Navigation links */
+.nav-list a {
+  text-decoration: none;
+  color: var(--text-color);
+  font-weight: 500;
+  font-size: 1rem;
+  transition: color 0.3s ease;
+  cursor: pointer;
+}
+
+/* Hover state for nav links */
+.nav-list a:hover,
+.nav-list a:focus {
+  color: var(--primary-color);
+  outline: none;
+}
+
+/* Primary button style */
+.btn-primary {
+  background-color: var(--btn-bg-color);
+  color: #ffffff;
+  padding: 0.5rem 1.25rem;
+  border-radius: 25px;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 1rem;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+  user-select: none;
+}
+
+/* Button hover effect */
+.btn-primary:hover,
+.btn-primary:focus {
+  background-color: var(--btn-hover-bg-color);
+  transform: scale(1.05);
+  outline: none;
+  cursor: pointer;
+}
+
+/* Smooth scrolling behavior for anchor links */
 html {
   scroll-behavior: smooth;
 }
 
-body {
-  font-family: 'Inter', sans-serif;
-  background-color: var(--cream);
-  color: var(--brown);
-  line-height: 1.6;
-  padding: 0;
-  margin: 0;
-}
-
-/* Header */
-header {
-  text-align: center;
-  padding: 3rem 1rem;
-  background-color: var(--light-brown);
-  border-bottom: 2px solid var(--gold);
-}
-
-.logo {
-  width: 100px;
-  height: auto;
-  margin-bottom: 1rem;
-}
-
-.brand {
-  font-size: 2rem;
-  font-weight: 800;
-  color: var(--brown);
-}
-
-.tagline {
-  font-size: 1.2rem;
-  margin: 0.5rem 0 1.5rem;
-  color: var(--gold);
-}
-
-/* Navigation */
-nav {
-  margin-top: 1rem;
-}
-
-nav a {
-  text-decoration: none;
-  color: var(--brown);
-  margin: 0 1rem;
-  font-weight: 600;
-  transition: color 0.3s ease;
-}
-
-nav a:hover {
-  color: var(--gold);
-}
-
-/* Hero Section */
-.hero {
-  padding: 4rem 1rem;
-  background-color: white;
-  text-align: center;
-}
-
-.hero h2 {
-  font-size: 2rem;
-  margin-bottom: 1rem;
-  color: var(--gold);
-}
-
-.hero p {
-  font-size: 1.1rem;
-  color: var(--brown);
-}
-
-/* General Sections */
-section {
-  padding: 4rem 1rem;
-  max-width: var(--max-width);
-  margin: auto;
-}
-
-section h2 {
-  font-size: 1.8rem;
-  margin-bottom: 1rem;
-  color: var(--gold);
-}
-
-/* Product Gallery */
-.product-gallery {
-  display: flex;
-  gap: 1.5rem;
-  justify-content: center;
-  flex-wrap: wrap;
-  margin-top: 2rem;
-}
-
-.product-gallery img {
-  width: 220px;
-  border-radius: 10px;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-.product-gallery img:hover {
-  transform: scale(1.05);
-  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.12);
-}
-
-/* Contact */
-#contact p {
-  margin-bottom: 0.5rem;
-}
-
-/* Footer */
-footer {
-  text-align: center;
-  padding: 2rem 1rem;
-  background-color: var(--light-brown);
-  font-size: 0.9rem;
-  border-top: 2px solid var(--gold);
-  color: var(--brown);
-}
-
-/* Responsive Design */
+/* Responsive Design for tablets and smaller devices */
 @media (max-width: 768px) {
-  .brand {
-    font-size: 1.6rem;
+  .nav-list {
+    display: none; /* Hide nav menu on smaller devices for now */
   }
-
-  .tagline {
-    font-size: 1rem;
+  .btn-primary {
+    display: none; /* Hide the order button on small screens */
   }
+}
 
-  .hero h2 {
-    font-size: 1.5rem;
-  }
 
-  .hero p {
-    font-size: 1rem;
-  }
-
-  section h2 {
-    font-size: 1.4rem;
-  }
-
-  .product-gallery {
+@media (max-width: 900px) {
+  .hero-content {
     flex-direction: column;
-    align-items: center;
+    text-align: center;
   }
-
-  .product-gallery img {
-    width: 80%;
-    max-width: 300px;
+  
+  .hero-text, .hero-image {
+    flex: 1 1 100%;
   }
-
-  nav {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 0.5rem;
+  
+  .hero-text h1 {
+    font-size: 2rem;
   }
-
-  nav a {
-    margin: 0.3rem;
+  
+  .hero-text p {
+    max-width: 100%;
   }
 }
 
-@media (max-width: 480px) {
-  .logo {
-    width: 80px;
-  }
-
-  .hero h2 {
-    font-size: 1.3rem;
-  }
-
-  .hero p,
-  .tagline {
-    font-size: 0.95rem;
-  }
-
-  nav a {
-    font-size: 0.95rem;
-  }
-}
+/* Optional: Add a basic hamburger menu styling here if you want to expand */
+/* You can ask me later if you want me to create a mobile menu */
